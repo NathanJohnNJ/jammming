@@ -4,7 +4,7 @@ import Search from "./pages/Search";
 import Overview from "./pages/Overview";
 import Profile from "./pages/Profile";
 import Root from "./pages/Root";
-import CallBack from "./components/CallBack"
+import Login from "./pages/Login";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { generateCodeVerifier, generateCodeChallenge } from "./lib/auth";
 import "./App.css";
