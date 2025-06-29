@@ -33,7 +33,7 @@ export function getSpotifyCode(challenge){
     return authUrl
 }
 
-export async function getAccessToken(clientId, code, verifier) {
+export async function getAccessToken(code, verifier) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("grant_type", "authorization_code");
