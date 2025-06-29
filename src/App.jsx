@@ -20,6 +20,11 @@ const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 if(code){
   token = await getAccessToken(code, verifier); 
+  const url = new URL(window.location.href);
+  url.searchParams.delete("code");
+
+  const updatedUrl = url.search ? url.href : url.href.replace('?', '');
+  window.history.replaceState({}, document.title, updatedUrl); 
 }
 
 function App() {
