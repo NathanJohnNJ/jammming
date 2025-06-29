@@ -8,7 +8,6 @@ import Login from "./pages/Login";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { generateCodeVerifier, generateCodeChallenge, getAccessToken } from "./lib/auth";
 import "./App.css";
-import NavBar from "./components/NavBar";
 
 let verifier;
 let codeChallenge;
@@ -47,12 +46,7 @@ function App() {
 )
 
   return (
-    <div className="relative flex flex-col">
-    <RouterProvider router={router} >
-
-      <NavBar />
-    </RouterProvider>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
