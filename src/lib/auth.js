@@ -1,6 +1,6 @@
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-const redirectUri = "https://jammming.njtd.xyz:3000/callback";
+const redirectUri = "https://jammming.njtd.xyz/callback";
 import { Buffer } from 'buffer';
     
 export function generateCodeVerifier(length) {
