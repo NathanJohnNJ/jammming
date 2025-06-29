@@ -1,13 +1,9 @@
 // import MiniPlayer from '../components/MiniPlayer';
 import Profile from '../components/Profile';
 import CompactPlaylist from '../components/CompactPlaylist';
-import { getAccessToken } from '../lib/auth';
 
 export default function Overview(props){
-  const { verifier } = props;
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get("code");
-  const token = getAccessToken(code, verifier); 
+  const { token } = props;
   
   return (
      <main className="w-[90%] h-[90%] text-center">
