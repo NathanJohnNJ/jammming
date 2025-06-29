@@ -18,6 +18,9 @@ export default defineConfig(() => {
     }),
       react(),
       tailwindcss()
-    ]
+    ],
+    build: {
+      target: 'esnext'
+    }
   }
 })
