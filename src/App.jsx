@@ -48,8 +48,10 @@ function App() {
 
   return (
     <div className="relative flex flex-col">
-    <NavBar />
-    <RouterProvider router={router} />
+    <RouterProvider router={router} >
+
+      <NavBar />
+    </RouterProvider>
     </div>
   );
 }
