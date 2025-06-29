@@ -5,11 +5,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(() => {
   return {
-    // server: {
-    //   https: true,
-    //   cors: true,
-    //   port: 3000
-    // },
+    server: {
+      https: true,
+      cors: true,
+      // port: 3000
+    },
     plugins: [
     //   basicSsl({
     //   name: 'test',

@@ -5,9 +5,10 @@ import Overview from "./pages/Overview";
 import Profile from "./pages/Profile";
 import Root from "./pages/Root";
 import Login from "./pages/Login";
-import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Routes } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { generateCodeVerifier, generateCodeChallenge, getAccessToken } from "./lib/auth";
 import "./App.css";
+import NavBar from "./components/NavBar";
 
 let verifier;
 let codeChallenge;
@@ -30,8 +31,13 @@ if(code){
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
       <Route path="/" element={ <Root /> }>
+        {
+        !token
+        ?
         <Route index element={ <Login challenge={codeChallenge} /> }/>
-        <Route path="/callback" element={ <Overview token={token} />} />
+        :
+        <Route index element={ <Overview token={token} />} />
+        }
         <Route path="/profile" element={ <Profile token={token}/>} />
         <Route path="/nowplaying" element={ <NowPlaying token={token} />} />
         <Route path="/playlists" element={ <Playlists token={token}/>} />
@@ -41,7 +47,10 @@ function App() {
 )
 
   return (
+    <div className="relative flex flex-col">
+    <NavBar />
     <RouterProvider router={router} />
+    </div>
   );
 }
 

@@ -1,6 +1,7 @@
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-const redirectUri = "https://jammming.njtd.xyz/callback";
+// const redirectUri = "https://127.0.0.1:3000/callback";
+const redirectUri = "https://jammming.njtd.xyz";
 import { Buffer } from 'buffer';
     
 export function generateCodeVerifier(length) {
@@ -40,12 +41,29 @@ export async function getAccessToken(code, verifier) {
     params.append("code", code);
     params.append("redirect_uri", redirectUri);
     params.append("code_verifier", verifier);
-    const result = await fetch("https://accounts.spotify.com/api/token/", {
+    const result = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded",
-          "Access-Control-Allow-Origin": "*"
+          'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
          },
         body: params
+    });
+
+    const { access_token } = await result.json();
+    return access_token;
+}
+
+export async function getAccessToken2(code, ) {
+    const result = await fetch("https://accounts.spotify.com/api/token", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded",
+          'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
+         },
+         form: new URLSearchParams({
+          code: code,
+          redirect_uri: redirectUri,
+          grant_type: 'authorization_code',
+        }),
     });
 
     const { access_token } = await result.json();
