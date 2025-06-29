@@ -46,7 +46,13 @@ export async function getAccessToken(code, verifier) {
         headers: { "Content-Type": "application/x-www-form-urlencoded",
           'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
          },
-        body: params
+        body: new URLSearchParams({
+          client_id: clientId,
+          grant_type: "authorization_code",
+          code: code,
+          redirect_uri: redirectUri,
+          code_verifier: verifier,
+        })
     });
 
     const { access_token } = await result.json();
