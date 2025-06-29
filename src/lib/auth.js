@@ -1,5 +1,14 @@
-const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+let clientId;
+let clientSecret; 
+
+if (import.meta.env.PROD){
+  clientId = import.meta.env.SPOTIFY_CLIENT_ID;
+  clientSecret = import.meta.env.SPOTIFY_CLIENT_SECRET;
+} else {
+  clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET; 
+}
+
 const redirectUri = "https://jammming.njtd.xyz:3000/callback";
 import { Buffer } from 'buffer';
     
