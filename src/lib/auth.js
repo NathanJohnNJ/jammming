@@ -34,6 +34,31 @@ export function getSpotifyCode(challenge){
     return authUrl
 }
 
+// export async function getAccessToken(code, verifier) {
+//     const params = new URLSearchParams();
+//     params.append("client_id", clientId);
+//     params.append("grant_type", "authorization_code");
+//     params.append("code", code);
+//     params.append("redirect_uri", redirectUri);
+//     params.append("code_verifier", verifier);
+//     const result = await fetch("https://accounts.spotify.com/api/token", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/x-www-form-urlencoded",
+//           'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
+//          },
+//         body: new URLSearchParams({
+//           client_id: clientId,
+//           grant_type: "authorization_code",
+//           code: code,
+//           redirect_uri: redirectUri,
+//           code_verifier: verifier,
+//         })
+//     });
+
+//     const { access_token } = await result.json();
+//     return access_token;
+// }
+
 export async function getAccessToken(code, verifier) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
@@ -41,24 +66,16 @@ export async function getAccessToken(code, verifier) {
     params.append("code", code);
     params.append("redirect_uri", redirectUri);
     params.append("code_verifier", verifier);
-    const result = await fetch("https://accounts.spotify.com/api/token", {
+    const result = await fetch(`https://accounts.spotify.com/api/token?client_id=${clientId}&grant_type=authorization_code&code=${code}&redirect_uri=https://jammming.njtd.xyz&code_verifier=${verifier}`, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded",
           'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
          },
-        body: new URLSearchParams({
-          client_id: clientId,
-          grant_type: "authorization_code",
-          code: code,
-          redirect_uri: redirectUri,
-          code_verifier: verifier,
-        })
     });
 
     const { access_token } = await result.json();
     return access_token;
 }
-
 export async function getAccessToken2(code, ) {
     const result = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
