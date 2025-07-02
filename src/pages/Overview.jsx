@@ -6,7 +6,7 @@ export default function Overview(){
   
   return (
      <section className="w-full h-[90vh] text-center" id="overview">
-      <div className="flex w-full h-[95%]">
+      <div className="flex w-full h-[85%]">
         <div className="flex flex-col border-2 m-2 h-[95%] w-[40%] bg-white/85 rounded-md items-center justify-around">
           <h2 className="text-2xl font-black headers">PROFILE</h2>
           <div className="flex flex-col items-center h-full">
