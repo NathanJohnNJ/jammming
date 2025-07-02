@@ -1,23 +1,20 @@
 #root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
 .bgGrad{
   background-image: linear-gradient(40deg, rgb(50,50,50) 0%, rgb(175,175,175) 60%, rgb(240, 90, 190) 66%, rgb(250, 250, 250) 70%);
 }
 .backGround{
   background-color: #030205;
   background-image: url("/public/background.svg");
+}
+
+.headers{
+  background-image: url("/public/background.svg");
+  background-clip: text;
+  color: transparent;
 }

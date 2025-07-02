@@ -16,9 +16,9 @@ export default function Profile() {
             </ul>
           </div>
           <div className="flex flex-col">
-            <h3 className="font-semibold underline">Links:</h3>
+            <h3 className="font-semibold underline text-base">Links:</h3>
             <ul>
-              <li><b>Spotify URI:</b>  <a id="uri" href="#"></a></li>
+              <li><b>Spotify URI:</b>  <a id="uri" href="#" ></a></li>
               <li><b>Link:</b> <a id="url" href="#"></a></li>
               <li><b>Profile Image:</b> <span id="imgUrl"></span></li>
             </ul>

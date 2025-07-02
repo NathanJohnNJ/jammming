@@ -86,8 +86,9 @@ async function fetchProfile(token) {
 export function populateUI(profile) {
     document.getElementById("displayName").innerText = profile.display_name;
     if (profile.images[0]) {
-        const profileImage = new Image(200, 200);
+        const profileImage = new Image(120, 120);
         profileImage.src = profile.images[0].url;
+        profileImage.classList.add('rounded-full')
         document.getElementById("avatar").appendChild(profileImage);
         document.getElementById("imgUrl").innerText = profile.images[0].url;
     }
