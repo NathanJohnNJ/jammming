@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GoSearch } from "react-icons/go";
 
 export default function SearchBar(){
 
@@ -8,8 +9,9 @@ export default function SearchBar(){
     const bar = document.getElementById("search");
     bar.style.width = "20vw";
     bar.classList.remove('bg-neutral-200');
-    bar.classList.remove('text-neutral-800');
-    bar.classList.add('bg-neutral-400 text-neutral-700');
+    bar.classList.remove('text-neutral-700');
+    bar.classList.add('bg-neutral-400');
+    bar.classList.add('text-neutral-600');
 
   }
   function changeHandler(e){
@@ -20,15 +22,15 @@ export default function SearchBar(){
     const bar = document.getElementById("search");
     bar.style.width = "60vw";
     bar.classList.remove('bg-neutral-400');
-    bar.classList.remove('text-neutral-700');
-    bar.classList.add('bg-neutral-200 text-neutral-800');
+    bar.classList.remove('text-neutral-600');
+    bar.classList.add('bg-neutral-200');
+    bar.classList.add('text-neutral-700');
   }
   return (
     <div className="">
-      <form id="search" onSubmit={submitHandler}>
-        <label htmlFor="search">
-          <input type="text" name="search" id="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} />
-        </label>
+      <form id="search" className="bg-neutral-200 text-neutral-600 w-[20vw] relative" onSubmit={submitHandler}>
+        <input type="text"  name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} />
+        <GoSearch className="absolute right-2" onClick={onClickHandler} />
       </form>
     </div>
   )

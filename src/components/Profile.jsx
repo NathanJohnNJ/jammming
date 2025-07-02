@@ -4,16 +4,15 @@ export default function Profile() {
   return (
     <div className="flex flex-col items-center justify-center">
       <section>
-        <h1>Profile:</h1>
         <div id="profile" className="flex flex-col items-center">
           <div className="flex items-center justify-between">
             <span id="avatar" className="rounded-full"></span>
             <ul>
               <li>
-                <h2 className="text-3xl font=black shadow-2xl">Logged in as <span id="displayName"></span></h2>
+                <h2 className="text-lg font-bold shadow-2xl">Logged in as <span id="displayName"></span></h2>
               </li>
-              <li>User ID:  <span id="id"></span></li>
-              <li>Email: <span id="email"></span></li>
+              <li><b>User ID:</b>  <span id="id"></span></li>
+              <li><b>Email:</b> <span id="email"></span></li>
             </ul>
           </div>
           <div className="flex flex-col">

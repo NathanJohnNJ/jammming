@@ -5,9 +5,9 @@ import CompactPlaylist from '../components/CompactPlaylist';
 export default function Overview(){
   
   return (
-     <section className="w-[90%] h-[90%] text-center" id="overview">
-      <div className="flex w-full h-[95%]">
-        <div className="flex flex-col border-2 m-4 h-[95%] w-[30%] bg-white items-center">
+     <section className="w-[95%] h-[95%] text-center" id="overview">
+      <div className="flex w-full h-full">
+        <div className="flex flex-col border-2 m-2 h-[95%] w-[40%] bg-white rounded-md items-center">
           <h2 className="text-2xl">PROFILE</h2>
           <div className="flex flex-col items-center">
             <div>
@@ -15,11 +15,11 @@ export default function Overview(){
             </div>            
           </div>
         </div>
-        <div className="flex flex-col m-4 h-[95%] w-[30%] p-2 border-2 bg-white">
-          <h2 className="text-2xl bg-white rounded-4xl -m-b-20 h-fit">NOW PLAYING</h2>
+        <div className="flex flex-col m-2 h-[95%] w-[30%] p-2 border-2 bg-white rounded-md">
+          <h2 className="text-2xl h-fit">NOW PLAYING</h2>
           {/* <MiniPlayer /> */}
         </div>
-        <div className="flex flex-col m-4 h-[95%] w-[30%] border-2 bg-white">
+        <div className="flex flex-col m-2 h-[95%] w-[25%] border-2 bg-white rounded-md">
           <h2 className="text-2xl">PLAYLIST</h2>
           <CompactPlaylist />
         </div>
