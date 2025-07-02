@@ -4,9 +4,11 @@ import SearchBar from "../components/SearchBar";
 export default function Root() {
 
   return (
-    <main className="flex flex-col items-center justify-center backGround w-full max-w-[1400px] h-[86.5vh] overflow-hidden rounded-md">
-      <NavBar />
-      <SearchBar />
+    <main className="flex flex-col items-center justify-center backGround w-full max-w-[1400px] h-full overflow-hidden rounded-md">
+      <div className="relative w-screen h-fit bg-neutral-800">
+        <NavBar />
+        <SearchBar />
+      </div>
       <Outlet />
     </main>
   )
