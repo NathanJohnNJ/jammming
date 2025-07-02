@@ -9,7 +9,7 @@ export default function Root() {
         <NavBar />
         <SearchBar />
       </div>
-      <Outlet className="h-full" />
+      <Outlet className="h-screen" />
     </main>
   )
 }
