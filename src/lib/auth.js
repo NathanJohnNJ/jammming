@@ -60,6 +60,7 @@ export function getSpotifyCode(challenge){
 // }
 
 export async function getAccessToken(code, verifier) {
+  try {
     const result = await fetch(`https://accounts.spotify.com/api/token?client_id=${clientId}&grant_type=authorization_code&code=${code}&redirect_uri=https://jammming.njtd.xyz&code_verifier=${verifier}`, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded",
@@ -68,6 +69,13 @@ export async function getAccessToken(code, verifier) {
 
     const { access_token } = await result.json();
     return access_token;
+  } catch (error) {
+    if(error.error_description){
+      console.log(error.error_description)
+    }
+    console.log(error.message);
+  }
+    
 }
 // export async function getAccessToken(code, verifier) {
 //     const result = await fetch("https://accounts.spotify.com/api/token", {
