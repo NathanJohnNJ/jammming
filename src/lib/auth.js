@@ -59,27 +59,29 @@ export function getSpotifyCode(challenge){
 //     return access_token;
 // }
 
-export async function getAccessToken(code, verifier) {
-    const result = await fetch(`https://accounts.spotify.com/api/token?client_id=${clientId}&grant_type=authorization_code&code=${code}&redirect_uri=https://jammming.njtd.xyz&code_verifier=${verifier}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded",
-          'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
-         },
-    });
+// export async function getAccessToken(code, verifier) {
+//     const result = await fetch(`https://accounts.spotify.com/api/token?client_id=${clientId}&grant_type=authorization_code&code=${code}&redirect_uri=https://jammming.njtd.xyz&code_verifier=${verifier}`, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/x-www-form-urlencoded",
+//           'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
+//          },
+//     });
 
-    const { access_token } = await result.json();
-    return access_token;
-}
-export async function getAccessToken2(code, ) {
+//     const { access_token } = await result.json();
+//     return access_token;
+// }
+export async function getAccessToken(code, verifier) {
     const result = await fetch("https://accounts.spotify.com/api/token", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded",
           'Authorization': 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64')),
          },
-         form: new URLSearchParams({
+        body: new URLSearchParams({
+          client_id: clientId,
           code: code,
           redirect_uri: redirectUri,
           grant_type: 'authorization_code',
+          code_verifier: verifier,
         }),
     });
 
