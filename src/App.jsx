@@ -6,8 +6,16 @@ import Profile from "./pages/Profile";
 import Root from "./pages/Root";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import "./App.css";
+import { useEffect } from "react";
+import { populateUI } from "./main";
 
-function App() {
+function App(props) {
+  const { profile } = props;
+  useEffect(() => {
+    console.log(profile); 
+    populateUI(profile);
+  }, [profile]);
+  
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
       <Route index element={ <Overview />} />

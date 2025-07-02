@@ -13,13 +13,9 @@ if (!code) {
 } else {
   const accessToken = await getAccessToken(clientId, code);
   const profile = await fetchProfile(accessToken);
-  console.log(profile); 
   createRoot(document.getElementById('root')).render(
-  <App />
+  <App profile={profile}/>
   );
-  if(document.getElementById("overview")){
-    populateUI(profile);
-  }
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -87,7 +83,7 @@ async function fetchProfile(token) {
     return await result.json();
 }
 
-function populateUI(profile) {
+export function populateUI(profile) {
     document.getElementById("displayName").innerText = profile.display_name;
     if (profile.images[0]) {
         const profileImage = new Image(200, 200);
