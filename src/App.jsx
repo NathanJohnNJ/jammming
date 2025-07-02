@@ -4,44 +4,18 @@ import Search from "./pages/Search";
 import Overview from "./pages/Overview";
 import Profile from "./pages/Profile";
 import Root from "./pages/Root";
-import Login from "./pages/Login";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import { generateCodeVerifier, generateCodeChallenge, getAccessToken } from "./lib/auth";
 import "./App.css";
-
-let verifier;
-let codeChallenge;
-let token;
-if (!verifier){
-   verifier = generateCodeVerifier(128);
-   codeChallenge = await generateCodeChallenge(verifier);
-}
-const params = new URLSearchParams(window.location.search);
-const code = params.get("code");
-if(code){
-  token = await getAccessToken(code, verifier); 
-  const url = new URL(window.location.href);
-  url.searchParams.delete("code");
-
-  const updatedUrl = url.search ? url.href : url.href.replace('?', '');
-  window.history.replaceState({}, document.title, updatedUrl); 
-}
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
-      <Route path="/" element={ <Root challenge={codeChallenge} token={token} /> }>
-        {
-        !token
-        ?
-        <Route index element={ <Login challenge={codeChallenge} /> }/>
-        :
-        <Route index element={ <Overview token={token} />} />
-        }
-        <Route path="/profile" element={ <Profile token={token}/>} />
-        <Route path="/nowplaying" element={ <NowPlaying token={token} />} />
-        <Route path="/playlists" element={ <Playlists token={token}/>} />
-        <Route path="/search" element={ <Search token={token} />} />
-      </Route>
+    <Route path="/" element={ <Root /> }>
+      <Route index element={ <Overview />} />
+      <Route path="/profile" element={ <Profile />} />
+      <Route path="/nowplaying" element={ <NowPlaying />} />
+      <Route path="/playlists" element={ <Playlists />} />
+      <Route path="/search" element={ <Search />} />
+    </Route>
   )
 )
 

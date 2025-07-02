@@ -2,8 +2,7 @@
 import Profile from '../components/Profile';
 import CompactPlaylist from '../components/CompactPlaylist';
 
-export default function Overview(props){
-  const { token } = props;
+export default function Overview(){
   
   return (
      <main className="w-[90%] h-[90%] text-center">
@@ -12,7 +11,7 @@ export default function Overview(props){
           <h2 className="text-2xl">PROFILE</h2>
           <div className="flex flex-col items-center">
             <div>
-              <Profile token={token} />
+              <Profile />
             </div>            
           </div>
         </div>

@@ -1,24 +1,14 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx';
-// import { useState } from 'react';
-
-// const clientId = "671c262174324ac0b5de40aa0c9fad10"; 
-const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-// const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+const clientId = "671c262174324ac0b5de40aa0c9fad10"; 
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
 if (!code) {
-  redirectToAuthCodeFlow(clientId);
+    redirectToAuthCodeFlow(clientId);
 } else {
-  const accessToken = await getAccessToken(clientId, code);
-  const profile = await fetchProfile(accessToken);
-  console.log(profile); 
-  populateUI(profile);
-  createRoot(document.getElementById('root')).render(
-  <App />
-  )
+    const accessToken = await getAccessToken(clientId, code);
+    const profile = await fetchProfile(accessToken);
+    console.log(profile); 
+    populateUI(profile);
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -101,5 +91,3 @@ function populateUI(profile) {
     document.getElementById("url").innerText = profile.href;
     document.getElementById("url").setAttribute("href", profile.href);
 }
-
-
