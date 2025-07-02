@@ -27,7 +27,7 @@ export default function SearchBar(){
     bar.classList.add('text-neutral-700');
   }
   return (
-    <div className="absolute right-0 top-[80px] rounded-2xl opacity-80 border-green-500 border-4 ">
+    <div className="absolute right-[5vw] top-[80px] rounded-2xl opacity-80 border-green-500 border-4 ">
       <form id="search" className="relative bg-neutral-200 text-neutral-600 w-[20vw] flex flex-row items-center justify-between group rounded-2xl" onSubmit={submitHandler}>
         <input type="text" className="flex self-start group group-active:w-[60vw] rounded-2xl"  name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} />
         <GoSearch className="absolute right-4 top-2" onClick={onClickHandler} />
