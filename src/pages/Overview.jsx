@@ -5,7 +5,7 @@ import CompactPlaylist from '../components/CompactPlaylist';
 export default function Overview(){
   
   return (
-     <section className="w-full h-full text-center  border-blue-500 border-4" id="overview">
+     <section className="w-full text-center  border-blue-500 border-4" id="overview">
       <div className="flex w-full h-full">
         <div className="flex flex-col border-2 m-2 h-[95%] w-[40%] bg-white/85 rounded-md items-center justify-around">
           <h2 className="text-2xl font-black headers">PROFILE</h2>
