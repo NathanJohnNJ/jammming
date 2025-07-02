@@ -2,8 +2,7 @@
 export default function Profile() {
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <section id="profile" className="relative flex flex-col items-center">
+      <section id="profile" className="relative flex flex-col items-center h-full w-full">
         <div className="flex items-center justify-between">
           <span id="avatar" className="rounded-full"></span>
           <ul className="text-base">
@@ -23,6 +22,5 @@ export default function Profile() {
           </ul>
         </div>
       </section>
-    </div>
   )
 }
