@@ -1,0 +1,705 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?offset=0&limit=4&query=lady%20gaga&type=track&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "limit": 4,
+    "next": "https://api.spotify.com/v1/search?offset=4&limit=4&query=lady%20gaga&type=track&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "offset": 0,
+    "previous": null,
+    "total": 966,
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
+          "total_tracks": 34,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/4sLtOBOzn4s3GDUv3c5oJD"
+          },
+          "href": "https://api.spotify.com/v1/albums/4sLtOBOzn4s3GDUv3c5oJD",
+          "id": "4sLtOBOzn4s3GDUv3c5oJD",
+          "images": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273e2d156fdc691f57900134342",
+              "height": 640,
+              "width": 640
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02e2d156fdc691f57900134342",
+              "height": 300,
+              "width": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851e2d156fdc691f57900134342",
+              "height": 64,
+              "width": 64
+            }
+          ],
+          "name": "A Star Is Born Soundtrack",
+          "release_date": "2018-10-05",
+          "release_date_precision": "day",
+          "type": "album",
+          "uri": "spotify:album:4sLtOBOzn4s3GDUv3c5oJD",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+              },
+              "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+              "id": "1HY2Jd0NmPuamShAr6KMms",
+              "name": "Lady Gaga",
+              "type": "artist",
+              "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4VIvfOurcf0vuLRxLkGnIG"
+              },
+              "href": "https://api.spotify.com/v1/artists/4VIvfOurcf0vuLRxLkGnIG",
+              "id": "4VIvfOurcf0vuLRxLkGnIG",
+              "name": "Bradley Cooper",
+              "type": "artist",
+              "uri": "spotify:artist:4VIvfOurcf0vuLRxLkGnIG"
+            }
+          ],
+          "is_playable": true
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4VIvfOurcf0vuLRxLkGnIG"
+            },
+            "href": "https://api.spotify.com/v1/artists/4VIvfOurcf0vuLRxLkGnIG",
+            "id": "4VIvfOurcf0vuLRxLkGnIG",
+            "name": "Bradley Cooper",
+            "type": "artist",
+            "uri": "spotify:artist:4VIvfOurcf0vuLRxLkGnIG"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 215733,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USUM71813192"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2VxeLyX666F8uXCJ0dZF8B"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2VxeLyX666F8uXCJ0dZF8B",
+        "id": "2VxeLyX666F8uXCJ0dZF8B",
+        "is_playable": true,
+        "name": "Shallow",
+        "popularity": 88,
+        "preview_url": null,
+        "track_number": 12,
+        "type": "track",
+        "uri": "spotify:track:2VxeLyX666F8uXCJ0dZF8B",
+        "is_local": false
+      },
+      {
+        "album": {
+          "album_type": "album",
+          "total_tracks": 19,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/3edjzMAVB9RYRd4UcZBchx"
+          },
+          "href": "https://api.spotify.com/v1/albums/3edjzMAVB9RYRd4UcZBchx",
+          "id": "3edjzMAVB9RYRd4UcZBchx",
+          "images": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273b5d4b4ed17ec86c4b3944af2",
+              "height": 640,
+              "width": 640
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e02b5d4b4ed17ec86c4b3944af2",
+              "height": 300,
+              "width": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00004851b5d4b4ed17ec86c4b3944af2",
+              "height": 64,
+              "width": 64
+            }
+          ],
+          "name": "A Star Is Born Soundtrack (Without Dialogue)",
+          "release_date": "2018-10-05",
+          "release_date_precision": "day",
+          "type": "album",
+          "uri": "spotify:album:3edjzMAVB9RYRd4UcZBchx",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+              },
+              "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+              "id": "1HY2Jd0NmPuamShAr6KMms",
+              "name": "Lady Gaga",
+              "type": "artist",
+              "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+            },
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4VIvfOurcf0vuLRxLkGnIG"
+              },
+              "href": "https://api.spotify.com/v1/artists/4VIvfOurcf0vuLRxLkGnIG",
+              "id": "4VIvfOurcf0vuLRxLkGnIG",
+              "name": "Bradley Cooper",
+              "type": "artist",
+              "uri": "spotify:artist:4VIvfOurcf0vuLRxLkGnIG"
+            }
+          ],
+          "is_playable": true
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 210200,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USUM71813195"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2rbDhOo9Fh61Bbu23T2qCk"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2rbDhOo9Fh61Bbu23T2qCk",
+        "id": "2rbDhOo9Fh61Bbu23T2qCk",
+        "is_playable": true,
+        "name": "Always Remember Us This Way",
+        "popularity": 87,
+        "preview_url": null,
+        "track_number": 9,
+        "type": "track",
+        "uri": "spotify:track:2rbDhOo9Fh61Bbu23T2qCk",
+        "is_local": false
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "total_tracks": 1,
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2I6LyArz82waG94e9V5B9d"
+          },
+          "href": "https://api.spotify.com/v1/albums/2I6LyArz82waG94e9V5B9d",
+          "id": "2I6LyArz82waG94e9V5B9d",
+          "images": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b27325304f6dc9dea023ce4b985c",
+              "height": 640,
+              "width": 640
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e0225304f6dc9dea023ce4b985c",
+              "height": 300,
+              "width": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000485125304f6dc9dea023ce4b985c",
+              "height": 64,
+              "width": 64
+            }
+          ],
+          "name": "Abracadabra",
+          "release_date": "2025-02-03",
+          "release_date_precision": "day",
+          "type": "album",
+          "uri": "spotify:album:2I6LyArz82waG94e9V5B9d",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+              },
+              "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+              "id": "1HY2Jd0NmPuamShAr6KMms",
+              "name": "Lady Gaga",
+              "type": "artist",
+              "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+            }
+          ],
+          "is_playable": true
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 223398,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USUM72412581"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/5ZLUm9eab8y3tqQ1OhQSHI"
+        },
+        "href": "https://api.spotify.com/v1/tracks/5ZLUm9eab8y3tqQ1OhQSHI",
+        "id": "5ZLUm9eab8y3tqQ1OhQSHI",
+        "is_playable": true,
+        "name": "Abracadabra",
+        "popularity": 90,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:5ZLUm9eab8y3tqQ1OhQSHI",
+        "is_local": false
+      }
+    ]
+  },
+  "artists": {
+    "href": "https://api.spotify.com/v1/search?offset=0&limit=4&query=lady%20gaga&type=artist&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "limit": 4,
+    "next": "https://api.spotify.com/v1/search?offset=4&limit=4&query=lady%20gaga&type=artist&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "offset": 0,
+    "previous": null,
+    "total": 830,
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+        },
+        "followers": {
+          "href": null,
+          "total": 39355089
+        },
+        "genres": ["art pop", "pop"],
+        "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+        "id": "1HY2Jd0NmPuamShAr6KMms",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5ebaadc18cac8d48124357c38e6",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174aadc18cac8d48124357c38e6",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178aadc18cac8d48124357c38e6",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Lady Gaga",
+        "popularity": 93,
+        "type": "artist",
+        "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C"
+        },
+        "followers": {
+          "href": null,
+          "total": 72975150
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C",
+        "id": "0du5cEVh5yTK9QJze8zA0C",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5ebc36dd9eb55fb0db4911f25dd",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174c36dd9eb55fb0db4911f25dd",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178c36dd9eb55fb0db4911f25dd",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Bruno Mars",
+        "popularity": 93,
+        "type": "artist",
+        "uri": "spotify:artist:0du5cEVh5yTK9QJze8zA0C"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H"
+        },
+        "followers": {
+          "href": null,
+          "total": 67409431
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/5pKCCKE2ajJHZ9KAiaK11H",
+        "id": "5pKCCKE2ajJHZ9KAiaK11H",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5eb373e1be0410d4212bf72acab",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174373e1be0410d4212bf72acab",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178373e1be0410d4212bf72acab",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Rihanna",
+        "popularity": 93,
+        "type": "artist",
+        "uri": "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/3WJps7HNM1yNBed5t6ptQJ"
+        },
+        "followers": {
+          "href": null,
+          "total": 14166
+        },
+        "genres": ["soca", "dancehall", "calypso"],
+        "href": "https://api.spotify.com/v1/artists/3WJps7HNM1yNBed5t6ptQJ",
+        "id": "3WJps7HNM1yNBed5t6ptQJ",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5eb59cad59d766756ab1425375f",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000517459cad59d766756ab1425375f",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f17859cad59d766756ab1425375f",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Lady Lava",
+        "popularity": 43,
+        "type": "artist",
+        "uri": "spotify:artist:3WJps7HNM1yNBed5t6ptQJ"
+      }
+    ]
+  },
+  "albums": {
+    "href": "https://api.spotify.com/v1/search?offset=0&limit=4&query=lady%20gaga&type=album&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "limit": 4,
+    "next": "https://api.spotify.com/v1/search?offset=4&limit=4&query=lady%20gaga&type=album&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "offset": 0,
+    "previous": null,
+    "total": 702,
+    "items": [
+      {
+        "album_type": "album",
+        "total_tracks": 34,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/4sLtOBOzn4s3GDUv3c5oJD"
+        },
+        "href": "https://api.spotify.com/v1/albums/4sLtOBOzn4s3GDUv3c5oJD",
+        "id": "4sLtOBOzn4s3GDUv3c5oJD",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67616d0000b273e2d156fdc691f57900134342",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00001e02e2d156fdc691f57900134342",
+            "height": 300,
+            "width": 300
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00004851e2d156fdc691f57900134342",
+            "height": 64,
+            "width": 64
+          }
+        ],
+        "name": "A Star Is Born Soundtrack",
+        "release_date": "2018-10-05",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:4sLtOBOzn4s3GDUv3c5oJD",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4VIvfOurcf0vuLRxLkGnIG"
+            },
+            "href": "https://api.spotify.com/v1/artists/4VIvfOurcf0vuLRxLkGnIG",
+            "id": "4VIvfOurcf0vuLRxLkGnIG",
+            "name": "Bradley Cooper",
+            "type": "artist",
+            "uri": "spotify:artist:4VIvfOurcf0vuLRxLkGnIG"
+          }
+        ],
+        "is_playable": true
+      },
+      {
+        "album_type": "album",
+        "total_tracks": 14,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2MHUaRi9OCyTN02SoyRRBJ"
+        },
+        "href": "https://api.spotify.com/v1/albums/2MHUaRi9OCyTN02SoyRRBJ",
+        "id": "2MHUaRi9OCyTN02SoyRRBJ",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67616d0000b273b0860cf0a98e09663c82290c",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00001e02b0860cf0a98e09663c82290c",
+            "height": 300,
+            "width": 300
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00004851b0860cf0a98e09663c82290c",
+            "height": 64,
+            "width": 64
+          }
+        ],
+        "name": "MAYHEM",
+        "release_date": "2025-03-07",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:2MHUaRi9OCyTN02SoyRRBJ",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          }
+        ],
+        "is_playable": true
+      },
+      {
+        "album_type": "album",
+        "total_tracks": 24,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/1X9AFMWRGElyFpySNcyI4x"
+        },
+        "href": "https://api.spotify.com/v1/albums/1X9AFMWRGElyFpySNcyI4x",
+        "id": "1X9AFMWRGElyFpySNcyI4x",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67616d0000b273a8b02cfd80bb576eaade17b8",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00001e02a8b02cfd80bb576eaade17b8",
+            "height": 300,
+            "width": 300
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00004851a8b02cfd80bb576eaade17b8",
+            "height": 64,
+            "width": 64
+          }
+        ],
+        "name": "The Fame Monster (UK Deluxe)",
+        "release_date": "2009-01-01",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:1X9AFMWRGElyFpySNcyI4x",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          }
+        ],
+        "is_playable": true
+      },
+      {
+        "album_type": "album",
+        "total_tracks": 15,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/1qwlxZTNLe1jq3b0iidlue"
+        },
+        "href": "https://api.spotify.com/v1/albums/1qwlxZTNLe1jq3b0iidlue",
+        "id": "1qwlxZTNLe1jq3b0iidlue",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67616d0000b273e691217483df8798445c82e2",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00001e02e691217483df8798445c82e2",
+            "height": 300,
+            "width": 300
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616d00004851e691217483df8798445c82e2",
+            "height": 64,
+            "width": 64
+          }
+        ],
+        "name": "The Fame",
+        "release_date": "2008-01-01",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:1qwlxZTNLe1jq3b0iidlue",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1HY2Jd0NmPuamShAr6KMms"
+            },
+            "href": "https://api.spotify.com/v1/artists/1HY2Jd0NmPuamShAr6KMms",
+            "id": "1HY2Jd0NmPuamShAr6KMms",
+            "name": "Lady Gaga",
+            "type": "artist",
+            "uri": "spotify:artist:1HY2Jd0NmPuamShAr6KMms"
+          }
+        ],
+        "is_playable": true
+      }
+    ]
+  },
+  "playlists": {
+    "href": "https://api.spotify.com/v1/search?offset=0&limit=4&query=lady%20gaga&type=playlist&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "limit": 4,
+    "next": "https://api.spotify.com/v1/search?offset=4&limit=4&query=lady%20gaga&type=playlist&market=GB&locale=en-GB,en-US;q%3D0.9,en;q%3D0.8",
+    "offset": 0,
+    "previous": null,
+    "total": 899,
+    "items": [
+      {
+        "collaborative": false,
+        "description": "A playlist of Mother Monster’s biggest singles curated by a longtime fan. (Instagram: russellrua)",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/3dpOdyAk3AVSSc0CqXQEA6"
+        },
+        "href": "https://api.spotify.com/v1/playlists/3dpOdyAk3AVSSc0CqXQEA6",
+        "id": "3dpOdyAk3AVSSc0CqXQEA6",
+        "images": [
+          {
+            "url": "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72ca5fd0a699d809362a2e42fd3",
+            "height": null,
+            "width": null
+          }
+        ],
+        "name": "Lady Gaga - Greatest Hits",
+        "owner": {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/russellrua"
+          },
+          "href": "https://api.spotify.com/v1/users/russellrua",
+          "id": "russellrua",
+          "type": "user",
+          "uri": "spotify:user:russellrua",
+          "display_name": "russellrua"
+        },
+        "public": true,
+        "snapshot_id": "AAABopna7zTh+JvJ5kY/27J9n14NI8n5",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/3dpOdyAk3AVSSc0CqXQEA6/tracks",
+          "total": 20
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:3dpOdyAk3AVSSc0CqXQEA6",
+        "primary_color": null
+      },
+      {
+        "collaborative": false,
+        "description": "",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/4XLL5gBXsdxHfRiaAgtc6P"
+        },
+        "href": "https://api.spotify.com/v1/playlists/4XLL5gBXsdxHfRiaAgtc6P",
+        "id": "4XLL5gBXsdxHfRiaAgtc6P",
+        "images": [
+          {
+            "url": "https://mosaic.scdn.co/640/ab67616d00001e025c9890c0456a3719eeecd8aaab67616d00001e026040effba89b9b00a6f6743aab67616d00001e027da123c944790bfab54b2522ab67616d00001e02e691217483df8798445c82e2",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://mosaic.scdn.co/300/ab67616d00001e025c9890c0456a3719eeecd8aaab67616d00001e026040effba89b9b00a6f6743aab67616d00001e027da123c944790bfab54b2522ab67616d00001e02e691217483df8798445c82e2",
+            "height": 300,
+            "width": 300
+          },
+          {
+            "url": "https://mosaic.scdn.co/60/ab67616d00001e025c9890c0456a3719eeecd8aaab67616d00001e026040effba89b9b00a6f6743aab67616d00001e027da123c944790bfab54b2522ab67616d00001e02e691217483df8798445c82e2",
+            "height": 60,
+            "width": 60
+          }
+        ],
+        "name": "LADY GAGA BANGERS🔥",
+        "owner": {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/frances.smith129074"
+          },
+          "href": "https://api.spotify.com/v1/users/frances.smith129074",
+          "id": "frances.smith129074",
+          "type": "user",
+          "uri": "spotify:user:frances.smith129074",
+          "display_name": "frances.smith129074"
+        },
+        "public": true,
+        "snapshot_id": "AAAAFAV5Oowb0YKlJNfoyulOQdC7uB59",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/4XLL5gBXsdxHfRiaAgtc6P/tracks",
+          "total": 18
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:4XLL5gBXsdxHfRiaAgtc6P",
+        "primary_color": null
+      },
+      null,
+      null
+    ]
+  }
+}

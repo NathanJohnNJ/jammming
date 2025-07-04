@@ -1,17 +1,15 @@
 @import "tailwindcss";
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
+@theme{
+}
+
+:root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #030205;
+  --shadow-big:  4px 4px 4px 4px #030205, 4px -4px 4px 4px #030205, -4px 4px 4px 4px #030205 , -4px -4px 4px 4px #030205;
+  --my-shadow: drop-shadow(0 2px 2px #1DB954) drop-shadow(0 -2px 2px #1DB954) drop-shadow(2px 0 2px #1DB954) drop-shadow(-2px 0 2px #1ED760);
+  --current-shadow: drop-shadow(0 2px 4px #1ED760) drop-shadow(0 -2px 2px #1DB954) drop-shadow(2px 0 4px #1ED760) drop-shadow(-2px 0 2px #1DB954);
 }
 
 body {
@@ -22,9 +20,8 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.headers{
+  text-shadow: var(--my-shadow);
 }
 
 button {
@@ -33,7 +30,7 @@ button {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #030205;
+    background-color: rgba(255, 255, 255, 0.87);
   }
 }

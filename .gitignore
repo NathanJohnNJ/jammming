@@ -26,4 +26,4 @@ dist-ssr
 package-lock.json
 notes/
 .qodo
-ssl/
+partTwo/

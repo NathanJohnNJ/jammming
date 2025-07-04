@@ -1,23 +1,26 @@
-// import MiniPlayer from '../components/MiniPlayer';
+import NowPlaying from '../components/NowPlaying';
 import Profile from '../components/Profile';
 import CompactPlaylist from '../components/CompactPlaylist';
+import Search from '../components/Search';
 
 export default function Overview(){
   
   return (
-     <section className="w-full h-[90vh] text-center" id="overview">
-      <div className="flex w-full h-[85%]">
-        <div className="flex flex-col border-2 m-2 h-[95%] w-[40%] bg-white/85 rounded-md items-center justify-around">
+     <section className="w-full h-[90vh] text-center mt-25" id="overview">
+      <div className="flex w-full h-[90%]">
+        <div className="flex flex-col border-2 m-2 h-full p-2 w-[40%] bg-white/65 rounded-md items-center justify-around">
           <h2 className="text-2xl font-black headers">PROFILE</h2>
           <div className="flex flex-col items-center h-full">
             <Profile />       
           </div>
-        </div>
-        <div className="flex flex-col m-2 h-[95%] w-[30%] p-2 border-2 bg-white/85 rounded-md">
           <h2 className="text-2xl font-black headers">NOW PLAYING</h2>
-          {/* <MiniPlayer /> */}
+          <NowPlaying />
         </div>
-        <div className="flex flex-col m-2 h-[95%] w-[25%] border-2 bg-white/85 rounded-md">
+        <div className="flex flex-col m-2 h-full w-[30%] p-2 border-2 bg-white/65 rounded-md">
+          <h2 className="text-2xl font-black headers">Search</h2>
+          <Search />
+        </div>
+        <div className="flex flex-col m-2 h-full w-[25%] p-2 border-2 bg-white/65 rounded-md">
           <h2 className="text-2xl font-black headers">PLAYLIST</h2>
           <CompactPlaylist />
         </div>

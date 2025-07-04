@@ -1,7 +1,6 @@
 #root {
-  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -10,48 +9,16 @@
 }
 .backGround{
   background-color: #030205;
-  background-image: url("/public/background.svg");
+  background-image: url("/background.svg");
+  background-size: cover;
 }
 
 .headers{
-  background-color: #030205;
-  background-image: url("/public/background.svg");
-  background-size: cover;
+  filter: drop-shadow(-1px 0px 2px rgba(0,0,0,0.75)) drop-shadow(2.25px -1px 2px rgba(0,0,0,0.75));
+  background: url("headerBackground.svg");
   background-clip: text;
+  background-size: 330%;
   color: transparent;
-  font-family: 'Spotify Mix';
-  animation: fontChanger 25s infinite linear forwards;
-  -moz-animation: fontChanger 25s infinite linear forwards;
-  -webkit-animation: fontChanger 25s infinite linear forwards; 
-}
-
-@keyframes fontChanger {
-  0%,100% {
-    font-weight: 100;
-    font-style: normal;
-  }
-  50%{
-    font-weight: 900;
-    font-style: italic;
-  }
-}
-@-moz-keyframes fontChanger {
-  0%,100% {
-    font-weight: 100;
-    font-style: normal;
-  }
-  50%{
-    font-weight: 900;
-    font-style: italic;
-  }
-}
-@-webkit-keyframes fontChanger {
-  0%,100% {
-    font-weight: 100;
-    font-style: normal;
-  }
-  50%{
-    font-weight: 900;
-    font-style: italic;
-  }
+  transition: all;
+  font-size: 2.5rem;
 }

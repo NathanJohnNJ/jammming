@@ -1,6 +1,6 @@
 import NowPlaying from "./pages/NowPlaying";
 import Playlists from "./pages/Playlists";
-import Search from "./pages/Search";
+import Search from "./components/Search";
 import Overview from "./pages/Overview";
 import Profile from "./pages/Profile";
 import Root from "./pages/Root";
