@@ -6,6 +6,8 @@ import App from './App.jsx';
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 // const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 const params = new URLSearchParams(window.location.search);
+const redirectUri = "https://jammming.njtd.xyz"; 
+// const redirectUri = "https://192.168.1.124:5173";
 const code = params.get("code");
 
 if (!code) {
@@ -25,8 +27,7 @@ export async function redirectToAuthCodeFlow(clientId) {
     const params = new URLSearchParams();
     params.append("client_id", clientId);
     params.append("response_type", "code");
-    params.append("redirect_uri", "https://jammming.njtd.xyz");
-    // params.append("redirect_uri", "https://192.168.1.124:5173");
+    params.append("redirect_uri", redirectUri);
     params.append("scope", "user-read-private user-read-email user-read-currently-playing user-read-playback-position user-read-playback-state user-modify-playback-state playlist-modify-public playlist-modify-private user-top-read user-read-recently-played user-library-read");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
@@ -59,8 +60,7 @@ export async function getAccessToken(clientId, code) {
     params.append("client_id", clientId);
     params.append("grant_type", "authorization_code");
     params.append("code", code);
-    params.append("redirect_uri", "https://jammming.njtd.xyz");
-    // params.append("redirect_uri", "https://192.168.1.124:5173");
+    params.append("redirect_uri", redirectUri);
     params.append("code_verifier", verifier);
 
     const result = await fetch("https://accounts.spotify.com/api/token", {

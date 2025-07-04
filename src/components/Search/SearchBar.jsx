@@ -24,9 +24,13 @@ export default function SearchBar(props){
   async function changeHandler(e){
     e.preventDefault();
     setSearchValue(e.target.value);
-    const result = await quickSearch(e.target.value);
-    console.log(result);
-    setPartialResult(result)
+    if (e.target.value !== ''){
+      const result = await quickSearch(e.target.value);
+      console.log(result);
+      setPartialResult(result)
+    } else {
+      setPartialResult(null);
+    }
   }
   function onClickHandler(){
     const bar = document.getElementById("search");
