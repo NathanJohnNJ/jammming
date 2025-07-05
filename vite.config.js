@@ -6,13 +6,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(() => {
   return {
     server: {
-      // https: true,
       cors: true,
     },
     plugins: [
     //   basicSsl({
     //   name: 'test',
-    //   domains: ['*.njtd.xyz'],
+    //   domains: ['*.custom.com'],
     //   certDir: '/Users/.../.devServer/cert',
     // }),
       react(),

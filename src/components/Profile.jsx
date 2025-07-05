@@ -2,7 +2,7 @@
 export default function Profile() {
 
   return (
-      <section id="profile" className="relative flex flex-col items-center h-full w-full text-zinc-300">
+      <section id="profile" className="relative flex flex-col items-center h-full w-full text-zinc-300 -mb-8">
         <div className="flex items-center justify-evenly mt-0 group">
           <span id="avatar" className="rounded-full m-2 ml-4 -mr-8 group-hover:ml-0 group-hover:mr-0 transition-all duration-100"></span>
           <ul className="text-base group">

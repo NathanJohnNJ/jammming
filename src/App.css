@@ -1,3 +1,8 @@
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
 #root {
   margin: 0 auto;
   /* padding: 2rem; */
@@ -21,4 +26,33 @@
   color: transparent;
   transition: all;
   font-size: 2.5rem;
+}
+
+.playlistBG{
+  background: linear-gradient(var(--bg-angle) in oklab, oklch(44.8% 0.119 151.328 / 0.75) 0%, oklch(84.1% 0.238 128.85 / 0.75) 35%,  oklch(90.6% 0.031 120.757 / 0.75));
+  animation: backgroundAnimation 30s infinite linear running;
+}
+
+.btn{
+  width: fit;
+  height: fit;
+  background: linear-gradient(var(--bg-angle) in oklab, oklch(44.8% 0.119 151.328 / 0.75) 0%, oklch(84.1% 0.238 128.85 / 0.75) 35%,  oklch(90.6% 0.031 120.757 / 0.75));
+  background-clip: border-box;
+  margin: 0 20px;
+}
+
+@keyframes backgroundAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-moz-keyframes backgroundAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-webkit-keyframes backgroundAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
 }

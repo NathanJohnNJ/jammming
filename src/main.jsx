@@ -4,10 +4,8 @@ import App from './App.jsx';
 
 
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-// const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+const redirectUri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI;
 const params = new URLSearchParams(window.location.search);
-const redirectUri = "https://jammming.njtd.xyz"; 
-// const redirectUri = "https://192.168.1.124:5173";
 const code = params.get("code");
 
 if (!code) {
@@ -128,7 +126,6 @@ export const getRefreshToken = async () => {
 //     });
 //     return await result.json();
 // }
-
 // export const usersQueue = await getUsersQueue();
 
 export async function quickSearch(searchTerm){
@@ -153,11 +150,11 @@ export async function getMoreItems(url){
   return await result.json();
 }
 
-export async function fullSearch(searchTerm){
+export async function fullSearch(searchTerm, types){
   const token = localStorage.getItem('access_token');
   const params = new URLSearchParams();
   params.append("q", searchTerm);
-  params.append("type", "artist track playlist album");
+  params.append("type", types);
   const result = await fetch(`https://api.spotify.com/v1/search?${params.toString()}`, {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
     });
