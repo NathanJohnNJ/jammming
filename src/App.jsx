@@ -8,16 +8,17 @@ import "./App.css";
 import { useEffect } from "react";
 import { populateUI } from "./main";
 
+
 function App(props) {
-  const { profile } = props;
+  const { profile, playlists } = props;
   useEffect(() => {
     populateUI(profile);
   }, [profile]);
   
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
-      <Route index element={ <Overview />} />
-      <Route path="/playlists" element={ <Playlists />} />
+      <Route index element={ <Overview playlists={playlists} />} />
+      <Route path="/playlists" element={ <Playlists playlists={playlists} />} />
       <Route path="/search" element={ <Search />} />
       <Route path="/info" element={ <Info />} />
     </Route>

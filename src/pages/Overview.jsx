@@ -3,8 +3,9 @@ import Profile from '../components/Profile';
 import CompactPlaylist from '../components/CompactPlaylist';
 import Search from '../components/Search';
 
-export default function Overview(){
-  
+export default function Overview(props){
+  const { playlists } = props;
+
   return (
      <section className="w-full h-[90vh] text-center mt-10" id="overview">
       <div className="flex w-full h-[98%] justify-center">
@@ -22,7 +23,7 @@ export default function Overview(){
         </div>
         <div className="flex flex-col m-2 h-full w-[25%] p-2 border-2 bg-white/65 rounded-md">
           <h2 className="text-2xl font-black headers">PLAYLIST</h2>
-          <CompactPlaylist />
+          <CompactPlaylist playlists={playlists}/>
         </div>
       </div>
     </section>

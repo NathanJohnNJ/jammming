@@ -14,7 +14,7 @@ if (!code) {
   const accessToken = await getAccessToken(clientId, code);
   const profile = await fetchProfile(accessToken);
   createRoot(document.getElementById('root')).render(
-  <App profile={profile}/>
+  <App profile={profile} />
   );
 }
 
@@ -26,7 +26,7 @@ export async function redirectToAuthCodeFlow(clientId) {
     params.append("client_id", clientId);
     params.append("response_type", "code");
     params.append("redirect_uri", redirectUri);
-    params.append("scope", "user-read-private user-read-email user-read-currently-playing user-read-playback-position user-read-playback-state user-modify-playback-state playlist-modify-public playlist-modify-private user-top-read user-read-recently-played user-library-read");
+    params.append("scope", "user-read-private user-read-email user-read-currently-playing user-read-playback-position user-read-playback-state user-modify-playback-state playlist-read-private playlist-modify-public playlist-modify-private user-top-read user-read-recently-played user-library-read");
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
 
@@ -159,4 +159,124 @@ export async function fullSearch(searchTerm, types){
         method: "GET", headers: { Authorization: `Bearer ${token}` }
     });
   return await result.json();
+}
+
+export async function getPlaylists() {
+    try{
+    const token = localStorage.getItem('access_token');
+    const res = await fetch(`https://api.spotify.com/v1/me/playlists`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await res.json();
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+export async function getPlaylist(playlistId){
+    try{
+      const token = localStorage.getItem('access_token');
+      const res = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return await res.json();
+    }
+  catch(error){
+    console.log(error);
+  }
+}
+
+export function populatePlaylist(playlist) {
+    document.getElementById("playlistName").innerText = playlist.name;
+    const list = document.getElementById("playlistItems");
+    list.style.overflowY - "scroll";
+    list.style.width = "98%";
+    list.style.height = "98%";
+    playlist.tracks.items.map((item, i) => {
+      const listItem = document.createElement('li');
+      listItem.style.display = 'flex';
+      listItem.style.whiteSpace = "nowrap";
+      listItem.style.overflowX = "scroll";
+      listItem.style.width = "97.5%";
+      const checkbox = document.createElement('input');
+      checkbox.type = "checkbox";
+      checkbox.style.width="2.5%";
+      checkbox.style.marginRight="0.5%";
+      listItem.appendChild(checkbox);
+      const firstCell = document.createElement('span');
+      firstCell.innerText = i + 1;
+      firstCell.style.width = "2.5%";
+      firstCell.style.marginRight="0.5%";
+      firstCell.style.marginLeft="0.5%";
+      firstCell.style.fontWeight = 600;
+      firstCell.style.display = "flex";
+      firstCell.style.flexDirection = "column";
+      firstCell.style.alignItems = "center";
+      firstCell.style.justifyContent = "center";
+      firstCell.style.fontSize = "1em";
+      const secondCell = document.createElement('div');
+      secondCell.style.display = "flex";
+      secondCell.style.flexDirection = "column";
+      secondCell.style.justifyContent = "center";
+      secondCell.style.marginRight="0.5%";
+      secondCell.style.marginLeft="0.5%";
+      secondCell.style.width = "58%";
+      secondCell.style.textAlign = "left";
+      const nameCell = document.createElement('span');
+      nameCell.innerText = item.track.name
+      nameCell.style.overflowX = "scroll";
+      const artistCell = document.createElement('span');
+      artistCell.style.fontWeight = 700;
+      artistCell.style.overflowX = "scroll";
+      item.track.artists.map((artist, i) => {
+        if (i === item.track.artists.length-1){
+          const span = document.createElement('span');
+          span.style.fontSize = "0.95em";
+          span.innerText = artist.name;
+          artistCell.appendChild(span);
+        } else {
+          const span = document.createElement('span');
+          span.style.fontSize = "0.8em";
+          span.innerText = `${artist.name}, `;
+          artistCell.appendChild(span);
+        }
+      });
+      secondCell.appendChild(nameCell);
+      secondCell.appendChild(artistCell);
+      const thirdCell = document.createElement('span');
+      thirdCell.innerText = formatTime(item.track.duration_ms);
+      thirdCell.style.width = "13.5%";
+      thirdCell.style.fontSize = "0.6em";
+      thirdCell.style.marginRight="0.5%";
+      thirdCell.style.marginLeft="0.5%";
+      thirdCell.style.alignSelf = 'center';
+      const fourthCell = document.createElement('img');
+      fourthCell.src = item.track.album.images[item.track.album.images.length-1].url;
+      fourthCell.style.width = "19.5%";
+      fourthCell.style.minWidth = "80px";
+      fourthCell.style.height = "auto";
+      fourthCell.style.marginLeft="0.5%";
+      listItem.appendChild(firstCell);
+      listItem.appendChild(secondCell);
+      listItem.appendChild(thirdCell);
+      listItem.appendChild(fourthCell);
+      list.appendChild(listItem);
+    })
+}
+
+function formatTime(ms) {
+  const minutes = Math.floor(ms / 60000);
+  const seconds = Math.floor((ms % 60000) / 1000);
+  const milliseconds = ms % 1000;
+
+  const pad = (num, size) => String(num).padStart(size, '0');
+
+  return `${pad(minutes, 2)}:${pad(seconds, 2)}:${pad(milliseconds, 3)}`;
 }
