@@ -32,8 +32,8 @@
  - [ ] Implement playlist renaming
  - [ ] Implement removing songs from current playlist
  - [ ] Implement adding songs to a custom playlist
- - [ ] Implement track listing in the component tree
- - [ ] Implement playlists in the component tree
+ - [x] Implement track listing in the component tree
+ - [x] Implement playlists in the component tree
 
 ### Prerequisites:
  - HTML

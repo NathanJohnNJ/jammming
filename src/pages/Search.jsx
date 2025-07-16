@@ -1,7 +1,7 @@
 // import { useLocation } from "react-router-dom";
 // import { useEffect, useState } from "react";
 // import { getMoreItems } from "../main";
-import FullSearch from '../components/FullSearch';
+import FullSearch from '../components/Search/FullSearch';
 
 
 export default function Search(){
@@ -21,7 +21,7 @@ export default function Search(){
   // }, []);
 
   return (
-    <div className="h-full w-full bg-zinc-200/60">
+    <div className="h-[95%] w-[98%] rounded-lg bg-zinc-200/60 overflow-hidden">
       {/* <SearchBar initialQuery={query} />
       <div className="">
         {

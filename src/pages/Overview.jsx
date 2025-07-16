@@ -1,10 +1,15 @@
 import NowPlaying from '../components/NowPlaying';
 import Profile from '../components/Profile';
 import CompactPlaylist from '../components/CompactPlaylist';
-import Search from '../components/Search';
+import Search from '../components/Search/QuickSearch';
+import { populateUI } from '../lib/profile';
+import { useEffect } from 'react';
 
 export default function Overview(props){
-  const { playlists } = props;
+  const { playlists, profile } = props;
+  useEffect(() => {
+      populateUI(profile);
+    }, [profile]);
 
   return (
      <section className="w-full h-[90vh] text-center mt-10" id="overview">

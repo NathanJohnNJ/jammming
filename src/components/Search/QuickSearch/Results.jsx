@@ -1,4 +1,7 @@
-import ResultItem from './ResultsItems/Tracks';
+import TrackItem from '../ResultsItems/Tracks';
+import AlbumItem from '../ResultsItems/Albums';
+import ArtistItem from '../ResultsItems/Artists';
+import PlaylistItem from '../ResultsItems/Playlists';
 import { NavLink } from 'react-router-dom';
 
 export default function Results(props){
@@ -15,7 +18,7 @@ export default function Results(props){
               {
                 tracks.items.map((track, i) => {
                   return (
-                    <ResultItem result={track} key={i} />
+                    <TrackItem track={track} key={i} />
                   )
                 })
               }

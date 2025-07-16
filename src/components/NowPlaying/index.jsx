@@ -1,4 +1,4 @@
-// import { usersQueue } from "../../main.jsx";
+
 import MiniPlayer from "./MiniPlayer";
 
 export default function NowPlaying(){

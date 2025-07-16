@@ -6,7 +6,7 @@ import Info from "./pages/Info";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import "./App.css";
 import { useEffect } from "react";
-import { populateUI } from "./main";
+import { populateUI } from "./lib/profile";
 
 
 function App(props) {
@@ -17,7 +17,7 @@ function App(props) {
   
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
-      <Route index element={ <Overview playlists={playlists} />} />
+      <Route index element={ <Overview playlists={playlists} profile={profile} />} />
       <Route path="/playlists" element={ <Playlists playlists={playlists} />} />
       <Route path="/search" element={ <Search />} />
       <Route path="/info" element={ <Info />} />
