@@ -21,7 +21,7 @@
    - [x] [The purpose of your project](#purpose)
    - [x] [Technologies used](#technologies)
    - [x] [Features](#features) 
-   - [ ] [Future work](#future-plans)
+   - [x] [Future work](#future-plans)
 
 ## Features:
  - [x] Users can search for songs by song title.
@@ -30,7 +30,7 @@
     - [x] You can also include other information – the design is up to you
  - [ ] Users can export their custom playlist to their personal Spotify account
  - [ ] Implement playlist renaming
- - [ ] Implement removing songs from current playlist
+ - [x] Implement removing songs from current playlist
  - [ ] Implement adding songs to a custom playlist
  - [x] Implement track listing in the component tree
  - [x] Implement playlists in the component tree
@@ -133,7 +133,8 @@ This step enables the [basicSsl plugin](https://www.npmjs.com/package/@vitejs/pl
   (*Adding the --host flag here allows connections via your local ip address. The exta '--' passes the flag through to the command that the npm script is going to run.*)
 
 ### Future plans
-- *To be completed*
+- After reading Spotify's latest guidelines for developers, beyond the scope of this project there's not a whole lot more that I could do with this. Any calls to the API should only return max. 20 results before directing the user to Spotify's own app (or to the app store for the users platform to download the Spotify app). There are strict rules with styling including any artwork pulled from the API and fonts an even using your own branding has certain rules with how much it can feature/intertwine with Spotify's branding. 
+- I have really enjoyed getting to grips with this project, and managing to overcome any initial issues with the API and the new, stricter authorisation protocols has really given me a boost in confidence when it comes to working with API's. I would've liked to have been able to continue with the project a little more to create a customisable, personal option to listen to Spotify. Hovwever given the limitations mentioned above, as well as others not mentioned. I believe my time will be better spent on other projects. I'm really happy with the outcome though, and glad I've got this in my portfolio going forward!
 
 
 <image alt="NJTD Logo" src="./public/rainbowLogo.png" width="200px" height="200px" />

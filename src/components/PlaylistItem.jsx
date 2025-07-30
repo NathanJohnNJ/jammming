@@ -6,7 +6,7 @@ export default function PlaylistItem(props){
 
   return(
     <div className="flex">
-      <div className="col-start-1 cole-end-2">
+      <div className="col-start-1 col-end-2">
         {key+1}
       </div>
       <div className="col-start-2 cole-end-3 flex flex-col">

@@ -43,9 +43,9 @@ export default function SearchBar(props){
     bar.classList.add('text-neutral-700');
   }
   return (
-    <div className="w-full h-min py-5 absolute left-[50%] -translate-x-[50%] top-0 ">
-        <form id="search" className="relative rounded-2xl opacity-80 bg-neutral-200 text-neutral-600 w-full h-[12.5%] flex flex-row items-center justify-between group transition-all duration-100" onSubmit={submitHandler}>
-          <input type="text" className="flex self-start text-left text-xs group w-full h-full rounded-2xl  opacity-35 group-active:opacity-90" name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} placeholder="Search..." />
+    <div className="w-full h-fit py-5 absolute left-[50%] -translate-x-[50%] -top-5 md:top-0">
+        <form id="search" className="relative rounded-2xl opacity-80 bg-neutral-200 text-neutral-600 w-full h-[12.5%] flex flex-row items-center justify-between group p-0.5 -mt-0.5 transition-all duration-100" onSubmit={submitHandler}>
+          <input type="text" className="flex self-start text-left text-xs group w-full h-full rounded-2xl opacity-35 group-active:opacity-90" name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} placeholder="Search..." />
           <GoSearch className="absolute right-2 top-0 opacity-45 group group-active:opacity-90 cursor-pointer" onClick={submitHandler} />
         </form>
         {

@@ -5,7 +5,7 @@ export default function NowPlaying(){
   // const queue = usersQueue;
 
   return (
-    <div>
+    <div className="">
       <MiniPlayer />
       {/* <div className="flex flex-col">
         <h3 className="">QUEUE:</h3>

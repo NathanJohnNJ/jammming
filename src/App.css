@@ -59,6 +59,7 @@
 .playlistCheck{
   width:3.5%;
   margin-right:0.5%;
+  margin-left: 1%
 }
 .playlistNum{
   width: 2.5%;
@@ -96,14 +97,14 @@
   margin-left: 0.5%;
   border-radius: 8px;
 }
-/* .playlistImg:hover > .playlistItem{
-  position: relative;
-} */
 .playlistImg:hover{
-  /* position: absolute;
-  right: 10px;
-  top:0; */
   scale: 1.1;
+}
+
+@media ( width <= 48rem ){
+  .headers {
+    font-size: 1.2rem;
+  }
 }
 @keyframes backgroundAnimation {
   to {

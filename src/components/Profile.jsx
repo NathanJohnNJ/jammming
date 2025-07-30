@@ -1,8 +1,17 @@
-
+import { fetchProfile, populateUI } from '../lib/profile';
+import { useEffect } from "react";
 export default function Profile() {
 
+  useEffect(() => {
+    async function getProfile(){
+      const profile = await fetchProfile();
+      populateUI(profile);
+    }
+    getProfile();
+  }, []);
+
   return (
-      <section id="profile" className="relative flex flex-col items-center h-full w-full text-zinc-300 -mb-8">
+      <section id="profile" className="relative flex flex-col items-center h-max md:h-full w-full text-zinc-300 -mb-8">
         <div className="flex items-center justify-evenly mt-0 group">
           <span id="avatar" className="rounded-full m-2 ml-4 -mr-8 group-hover:ml-0 group-hover:mr-0 transition-all duration-100"></span>
           <ul className="text-base group">
@@ -13,7 +22,7 @@ export default function Profile() {
             <li className="-mt-8 group-hover:mt-0 transition-all duration-100"><b>Email:</b> <span id="email"></span></li>
           </ul>
         </div>
-        <div className="flex flex-col absolute bottom-6 left-[50%] -translate-x-[50%]">
+        <div className="flex flex-col absolute bottom-20 left-[50%] -translate-x-[50%]">
           <h3 className="font-extrabold underline text-lg -ml-2 self-start text-left">Links:</h3>
           <ul className="text-left text-sm">
             <li><b>Spotify URI:</b>  <a id="uri" href="#" className="text-xs hover:font-medium hover:text-green-900" ></a></li>

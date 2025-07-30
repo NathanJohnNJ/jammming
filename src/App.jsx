@@ -5,20 +5,14 @@ import Root from "./pages/Root";
 import Info from "./pages/Info";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import "./App.css";
-import { useEffect } from "react";
-import { populateUI } from "./lib/profile";
 
 
-function App(props) {
-  const { profile, playlists } = props;
-  useEffect(() => {
-    populateUI(profile);
-  }, [profile]);
+function App() {
   
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root /> }>
-      <Route index element={ <Overview playlists={playlists} profile={profile} />} />
-      <Route path="/playlists" element={ <Playlists playlists={playlists} />} />
+      <Route index element={ <Overview />} />
+      <Route path="/playlists" element={ <Playlists />} />
       <Route path="/search" element={ <Search />} />
       <Route path="/info" element={ <Info />} />
     </Route>

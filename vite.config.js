@@ -9,11 +9,11 @@ export default defineConfig(() => {
       cors: true,
     },
     plugins: [
-    //   basicSsl({
-    //   name: 'test',
-    //   domains: ['*.custom.com'],
-    //   certDir: '/Users/.../.devServer/cert',
-    // }),
+    //    basicSsl({
+    //    name: 'test',
+    //    domains: ['*.custom.com'],
+    //    certDir: '/Users/.../.devServer/cert',
+    //  }),
       react(),
       tailwindcss()
     ],
