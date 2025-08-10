@@ -1,21 +1,53 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx';
-import { fetchProfile, populateUI } from './lib/profile.js';
 
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const redirectUri = import.meta.env.VITE_SPOTIFY_REDIRECT_URI;
+
+const currentToken = {
+  get access_token() { return localStorage.getItem('access_token') || null; },
+  get refresh_token() { return localStorage.getItem('refresh_token') || null; },
+  get expires_in() { return localStorage.getItem('refresh_in') || null },
+  get expires() { return localStorage.getItem('expires') || null },
+
+  save: function (response) {
+    const { access_token, refresh_token, expires_in } = response;
+    localStorage.setItem('access_token', access_token);
+    localStorage.setItem('refresh_token', refresh_token);
+    localStorage.setItem('expires_in', expires_in);
+
+    const now = new Date();
+    const expiry = new Date(now.getTime() + (expires_in * 1000));
+    localStorage.setItem('expires', expiry);
+  }
+};
+
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
+
+// if(code){
+//   const token = await getAccessToken(code);
+//   currentToken.save(token);
+
+//   const url = new URL(window.location.href);
+//   url.searchParams.delete("code");
+//   const updatedUrl = url.search ? url.href : url.href.replace('?', '');
+//   window.history.replaceState({}, document.title, updatedUrl);
+// }
+
+// if(currentToken.access_token){
+//   createRoot(document.getElementById('root')).render(<App />);
+// }
 
 if (!code) {
   redirectToAuthCodeFlow(clientId);
 } else {
-  const accessToken = await getAccessToken(clientId, code);
-  const profile = await fetchProfile(accessToken);
-  createRoot(document.getElementById('root')).render(
-  <App profile={profile} />
-  );
+  const token = await getAccessToken(clientId, code);
+  currentToken.save(token);
+  if(currentToken.access_token){
+    createRoot(document.getElementById('root')).render(<App />);
+  }
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -50,7 +82,7 @@ async function generateCodeChallenge(codeVerifier) {
     .replace(/=+$/, '');
 }
 
-export async function getAccessToken(clientId, code) {
+async function getAccessToken(clientId, code) {
   const verifier = localStorage.getItem("verifier");
   const params = new URLSearchParams();
   params.append("client_id", clientId);
@@ -64,13 +96,14 @@ export async function getAccessToken(clientId, code) {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: params
   });
-  const { access_token, refresh_token } = await result.json();
-  localStorage.setItem("access_token", access_token);
-  localStorage.setItem("refresh_token", refresh_token);
-  return access_token;
+  // const { access_token, refresh_token } = await result.json();
+  // localStorage.setItem("access_token", access_token);
+  // localStorage.setItem("refresh_token", refresh_token);
+  // return access_token;
+  return await result.json();
 }
 
-export const getRefreshToken = async () => {
+async function getRefreshToken(){
   const refreshToken = localStorage.getItem('refresh_token');
   const url = "https://accounts.spotify.com/api/token";
   const payload = {
@@ -85,10 +118,12 @@ export const getRefreshToken = async () => {
     }),
   }
   const body = await fetch(url, payload);
-  const response = await body.json();
+  // const response = await body.json();
 
-  localStorage.setItem('access_token', response.access_token);
-  if (response.refresh_token) {
-    localStorage.setItem('refresh_token', response.refresh_token);
-  }
+  // localStorage.setItem('access_token', response.access_token);
+  // if (response.refresh_token) {
+  //   localStorage.setItem('refresh_token', response.refresh_token);
+  // }
+  return await body.json();
 }
+

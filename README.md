@@ -28,8 +28,8 @@
     - [x] You can also include functionality to search by other attributes like artist’s name, genre, etc.
  - [x] Users can see information about each song like title, artist, and album for songs they queried
     - [x] You can also include other information – the design is up to you
- - [ ] Users can export their custom playlist to their personal Spotify account
- - [ ] Implement playlist renaming
+ - [x] Users can export their custom playlist to their personal Spotify account
+ - [x] Implement playlist renaming
  - [x] Implement removing songs from current playlist
  - [ ] Implement adding songs to a custom playlist
  - [x] Implement track listing in the component tree

@@ -1,12 +1,12 @@
+import SpotifyEmbed from "./SpotifyEmbed";
 
-import MiniPlayer from "./MiniPlayer";
-
-export default function NowPlaying(){
+export default function NowPlaying(props){
+  const { trackId } = props;
   // const queue = usersQueue;
 
   return (
     <div className="">
-      <MiniPlayer />
+      <SpotifyEmbed trackId={trackId} />
       {/* <div className="flex flex-col">
         <h3 className="">QUEUE:</h3>
          <ul className="">

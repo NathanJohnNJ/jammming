@@ -2,19 +2,10 @@ import { NavLink } from "react-router-dom";
 
 export default function ArtistItem(props){
   const { artist } = props;
-  const artistInfo = {
-    name: artist.name,
-    followers: artist.followers.total,
-    genres: artist.genres,
-    fullDetails: artist.href,
-    popularity: artist.popularity,
-    uri: artist.uri,
-    image: artist.images[artist.images.length-1]
-  };
 
   return (
     <div className="flex flex-row space-between w-[98%] rounded-md self-center justify-self-center relative hover:scale-[1.01] hover:shadow-2xl border-b-2 border-b-slate-600/40  bg-neutral-300 hover:bg-neutral-200" style={{height: artist.images[artist.images.length-1].height}}>
-      <NavLink to="/info" state={artistInfo} className=" flex w-full justify-self-center rounded-md">
+      <NavLink to="/info" state={artist} className="flex w-full justify-self-center rounded-md">
         <div className="w-full h-fit ml-3 mr-3 pl-4 py-0.5  text-neutral-800 font-light flex flex-col items-start justify-center text-xs rounded-md">
           <div className="flex flex-col items-centre justify-evenly w-[80%]">
             <p className="text-sm font-semibold text-left">{artist.name}</p>
@@ -34,7 +25,7 @@ export default function ArtistItem(props){
           }
         </div>
       </NavLink>
-      <NavLink to="/info" state={artistInfo} className="absolute right-0 top-[50%] -translate-y-[50%] flex py-2" style={{height: artist.images[artist.images.length-1].height}}>
+      <NavLink to="/info" state={artist} className="absolute right-0 top-[50%] -translate-y-[50%] flex py-2" style={{height: artist.images[artist.images.length-1].height}}>
         <img className="rounded-md mr-3.75 hover:scale-[1.2]" src={artist.images[artist.images.length-1].url} alt={`Album artwork for ${artist.name}`} />
       </NavLink>
     </div>

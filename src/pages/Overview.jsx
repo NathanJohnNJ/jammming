@@ -1,7 +1,7 @@
 import NowPlaying from '../components/NowPlaying';
 import Profile from '../components/Profile';
 import MiniProfile from '../components/MiniProfile';
-import CompactPlaylist from '../components/Playlists/CompactPlaylist';
+import CompactPlaylist from '../components/Playlists/Overview/CompactPlaylist';
 import Search from '../components/Search/QuickSearch';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState } from 'react';
@@ -18,10 +18,12 @@ export default function Overview(){
   }
 
   return (
-     <section className="w-full h-full md:h-[90vh] text-center mt-10" id="overview">
-      <div className="flex w-full h-[98%] justify-start md:justify-center items-center flex-col md:flex-row lg:flex-row">
+     <section className="w-full h-full md:h-[98dvh] text-center mt-10" id="overview">
+      <h1 className="text-6xl font-black text-white/80 -mt-10">Jammming</h1>
+      <h2 className="text-xl font-semibold text-white/80 flex place-self-center w-fit mt-4 ml-26">powered by <img src="/spotifyLogo/full/Full_Logo_White_CMYK.svg" alt="Spotify logo" className="w-[40%] m-2 -mt-1.5" /></h2>
+      <div className="flex w-full h-[90%] justify-start md:justify-center items-center flex-col md:flex-row lg:mt-8">
         <div className="hidden md:flex flex-col border-1 md:border-2 m-1 md:m-2 h-min md:h-full md:w-[38%] w-[95%] bg-white/65 rounded-md items-center md:pb-8">
-          <h2 className="text-2xl font-black headers">PROFILE</h2>
+          <h2 className="text-2xl font-black headers mt-1">PROFILE</h2>
           <div className="flex flex-col items-center h-full">
             <Profile />       
           </div>

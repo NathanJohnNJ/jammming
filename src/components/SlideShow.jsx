@@ -40,3 +40,16 @@ const dotVariants = {
     </div>
   )
 }
+
+export const Slideshow = ({ image }) => (
+  <AnimatePresence>
+    <motion.img
+      key={image.src}
+      src={image.src}
+      initial={{ x: 300, opacity: 0.25, scale: 0.1 }}
+      animate={{ x: 0, opacity: 1, scale: 1 }}
+      exit={{ x: -300, opacity: 0.25, scale: 0.1 }}
+      whileHover={{scale: 1.25}}
+    />
+  </AnimatePresence>
+)

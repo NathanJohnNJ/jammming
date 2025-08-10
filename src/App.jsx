@@ -8,9 +8,8 @@ import "./App.css";
 
 
 function App() {
-  
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={ <Root /> }>
+    <Route path="/" element={ <Root /> }>a
       <Route index element={ <Overview />} />
       <Route path="/playlists" element={ <Playlists />} />
       <Route path="/search" element={ <Search />} />

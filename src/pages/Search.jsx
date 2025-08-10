@@ -21,7 +21,7 @@ export default function Search(){
   // }, []);
 
   return (
-    <div className="h-[95%] w-[98%] rounded-lg bg-zinc-200/60 overflow-hidden">
+    <div className="h-[95vh] w-[98%] rounded-lg bg-zinc-200/60 overflow-hidden">
       {/* <SearchBar initialQuery={query} />
       <div className="">
         {

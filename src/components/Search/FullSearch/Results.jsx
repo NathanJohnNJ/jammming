@@ -18,7 +18,7 @@ export default function Results(props){
               {
                 tracks.items.map((track, i) => {
                   return (
-                    <TrackResultItem track={track} key={i} />
+                    <TrackItem track={track} key={i} />
                   )
                 })
               }

@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { GoSearch } from "react-icons/go";
-import { fullSearch } from "../../../lib/search";
+import { FaHeadphones } from "react-icons/fa";
+import { LuDiscAlbum } from "react-icons/lu";
+import { IoPeopleSharp } from "react-icons/io5";
+import { PiPlaylistDuotone } from "react-icons/pi";
+import { fullSearch, limitedSearch } from "../../../lib/search";
 import TrackItem from "../ResultsItems/Tracks";
 import AlbumItem from "../ResultsItems/Albums";
 import ArtistItem from "../ResultsItems/Artists";
@@ -27,7 +31,7 @@ export default function SearchBar(props){
     e.preventDefault();
     setSearchValue(e.target.value);
     if (e.target.value !== ''){
-      const result = await fullSearch(e.target.value, types);
+      const result = await limitedSearch(e.target.value, types);
       setPartialResult(result)
     } else {
       setPartialResult(null);
@@ -44,7 +48,7 @@ export default function SearchBar(props){
   useEffect(()=>{
     async function search(){
       if (searchValue !== ''){
-        const result = await fullSearch(searchValue, types);
+        const result = await limitedSearch(searchValue, types);
         setPartialResult(result)
       } else {
         setPartialResult(null);
@@ -53,24 +57,25 @@ export default function SearchBar(props){
     search();
   }, [types])
   return (
-    <div className="w-full h-fit max-h-[90%] absolute left-[50%] -translate-x-[50%] top-25">
-        <form id="search" className="relative left-[50%] -translate-x-[50%] top-2 rounded-2xl opacity-80 bg-neutral-200 text-neutral-600 w-[90%] h-[15%] flex flex-row items-center justify-between group transition-all duration-100" onSubmit={submitHandler}>
-          <input type="text" className="flex self-start text-left group w-full h-full rounded-2xl  opacity-35 group-active:opacity-90 pl-2 p-1 pt-0" name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} placeholder="Search..." />
-            <GoSearch className="absolute right-2 top-1 opacity-45 group group-active:opacity-90 hover:scale-[1.2] cursor-pointer" onClick={submitHandler} />
-        </form>
+    <div className="w-full h-fit max-h-[90%] absolute left-[50%] -translate-x-[50%] top-28">
+      <form id="search" className="relative left-[50%] -translate-x-[50%] top-2 rounded-2xl opacity-80 bg-neutral-200 text-neutral-600 w-[90%] h-[15%] flex flex-row items-center justify-between group transition-all duration-100" onSubmit={submitHandler}>
+        <input type="text" className="flex self-start text-left group w-full h-full rounded-2xl  opacity-35 group-active:opacity-90 pl-2 p-1 pt-0" name="search" value={searchValue} onChange={changeHandler} onClick={onClickHandler} placeholder="Search..." />
+          <GoSearch className="absolute right-2 top-1 opacity-45 group group-active:opacity-90 hover:scale-[1.2] cursor-pointer" onClick={submitHandler} />
+      </form>
       {
         <AnimatePresence>
           {
         partialResult &&
-        <motion.div className="relative h-[80vh] mt-2 w-[88%] place-self-center overflow-y-scroll rounded-b-2xl bg-linear-to-br from-neutral-500 to-40% to-neutral-400"
+        <motion.div className="relative h-[80vh] mt-2 w-[88%] place-self-center overflow-y-scroll overflow-x-hidden rounded-b-2xl bg-linear-to-br from-neutral-500 to-40% to-neutral-400"
         initial={{ height: 0 }}
         animate={{ height: '80vh' , transition: {duration: 0.075} }}
         exit={{ height: 0 }}
         >
+        <div className="z-20 h-[6%] fixed w-[88%] bg-linear-to-r from-neutral-500 to-40% to-neutral-400" ></div>
       {
         partialResult.tracks &&
           <div className="flex flex-col h-min w-full place-self-center rounded-b-2xl">
-            <h3 className="text-xl text-left text-neutral-100 sticky top-2 mb-2 ml-4">Tracks:</h3>
+            <h3 className="text-xl text-left text-neutral-100 sticky top-0 pt-1 mb-2 pl-4 z-20">Tracks:</h3>
             <ul className="bq-neutral-300 w-full h-fit sticky top-50">
               {
                 partialResult.tracks.items.map((track, i) => {
@@ -89,8 +94,8 @@ export default function SearchBar(props){
                   )
                 })
               }
-              <li className="hover:scale-[1.15]">
-                <NavLink to="/search" className="w-full h-fit cursor-pointer" state={{url:partialResult.tracks.next}}>Show More Tracks...</NavLink>
+              <li className="hover:scale-[1.15] w-fit place-self-center mt-2 bg-linear-to-br from-neutral-700/60 via-40% via-neutral-400 to-80% to-neutral-500/50 rounded-xl px-1 hover:text-zinc-600 transition-all duration-75">
+                <NavLink to="/search" className="w-full h-fit cursor-pointer flex flex-col items-center justify-center" state={{url:partialResult.tracks.next}}><FaHeadphones className="w-5 h-5 mt-1" />Show More Tracks...</NavLink>
               </li>
             </ul>
           </div>
@@ -98,7 +103,7 @@ export default function SearchBar(props){
         {
         partialResult.albums &&
           <div className="flex flex-col h-min w-full place-self-center rounded-b-2xl">
-            <h3 className="text-xl text-left text-neutral-100 sticky top-2 mb-2 ml-4">Albums:</h3>
+            <h3 className="text-xl text-left text-neutral-100 sticky top-0 mb-2 pl-4 z-20 w-full ">Albums:</h3>
             <ul className="bq-neutral-300 w-full h-fit sticky top-50">
               {
                 partialResult.albums.items.map((album, i) => {
@@ -117,8 +122,8 @@ export default function SearchBar(props){
                   )
                 })
               }
-              <li className="hover:scale-[1.15]">
-                <NavLink to="/search" className="w-full h-fit cursor-pointer" state={{url:partialResult.albums.next}}>Show More Albums...</NavLink>
+              <li className="hover:scale-[1.15] w-fit place-self-center mt-2 bg-linear-to-br from-neutral-700/60 via-40% via-neutral-400 to-80% to-neutral-500/50 rounded-xl px-1 hover:text-zinc-600 transition-all duration-75">
+                <NavLink to="/search" className="w-full h-fit cursor-pointer flex flex-col items-center justify-center" state={{url:partialResult.albums.next}}><LuDiscAlbum className="w-5 h-5 mt-1" />Show More Albums...</NavLink>
               </li>
             </ul>
           </div>
@@ -126,7 +131,7 @@ export default function SearchBar(props){
         {
         partialResult.artists &&
           <div className="flex flex-col h-min w-full place-self-center rounded-b-2xl">
-            <h3 className="text-xl text-left text-neutral-100 sticky top-2 mb-2 ml-4">Artists:</h3>
+            <h3 className="text-xl text-left text-neutral-100 sticky top-0 mb-2 pl-4 z-20 w-full">Artists:</h3>
             <ul className="bq-neutral-300 w-full h-fit sticky top-50">
               {
                 partialResult.artists.items.map((artist, i) => {
@@ -145,8 +150,8 @@ export default function SearchBar(props){
                   )
                 })
               }
-              <li className="hover:scale-[1.15]">
-                <NavLink to="/search" className="w-full h-fit cursor-pointer" state={{url:partialResult.artists.next}}>Show More Artists...</NavLink>
+              <li className="hover:scale-[1.15] w-fit place-self-center mt-2 bg-linear-to-br from-neutral-700/60 via-40% via-neutral-400 to-80% to-neutral-500/50 rounded-xl px-1 hover:text-zinc-600 transition-all duration-75">
+                <NavLink to="/search" className="w-full h-fit cursor-pointer flex flex-col items-center justify-center" state={{url:partialResult.artists.next}}><IoPeopleSharp className="w-5 h-5 mt-1" />Show More Artists...</NavLink>
               </li>
             </ul>
           </div>
@@ -154,7 +159,7 @@ export default function SearchBar(props){
         {
         partialResult.playlists &&
           <div className="flex flex-col h-min w-full place-self-center rounded-b-2xl">
-            <h3 className="text-xl text-left text-neutral-100 sticky top-2 mb-2 ml-4">Playlists:</h3>
+            <h3 className="text-xl text-left text-neutral-100 sticky top-0 mb-2 pl-4 z-20 w-full">Playlists:</h3>
             <ul className="bq-neutral-300 w-full h-fit sticky top-50">
               {
                 partialResult.playlists.items.map((playlist, i) => {
@@ -173,14 +178,22 @@ export default function SearchBar(props){
                   )
                 })
               }
-              <li className="hover:scale-[1.15]">
-                <NavLink to="/search" className="w-full h-fit cursor-pointer" state={{url:partialResult.playlists.next}}>Show More Playlists...</NavLink>
+              <li className="hover:scale-[1.15] w-fit place-self-center mt-2 bg-linear-to-br from-neutral-700/60 via-40% via-neutral-400 to-80% to-neutral-500/50 rounded-xl px-1 hover:text-zinc-600 transition-all duration-75">
+                <NavLink to="/search" className="w-full h-fit cursor-pointer flex flex-col items-center justify-center" state={{url:partialResult.playlists.next}}><PiPlaylistDuotone className="w-5 h-5 mt-1" />Show More Playlists...</NavLink>
               </li>
             </ul>
           </div>
         }
-        <div className="hover:scale-[1.15]">
-          <NavLink to="/search" className="w-full h-fit cursor-pointer" state={{url:searchValue}}>Show More Results...</NavLink>
+        <div className="hover:scale-[1.2] scale-[1.15] mt-4 w-fit place-self-center bg-linear-to-br from-neutral-700/60 via-40% via-neutral-400 to-80% to-neutral-500/50 rounded-xl px-1 hover:text-zinc-600 transition-all duration-75">
+          <NavLink to="/search" className="w-full h-fit cursor-pointer flex flex-col items-center justify-center" state={{url:searchValue}}>
+            <div classsName="flex flex-row">
+              <FaHeadphones className="w-5 h-5 mt-1 mx-1 inline" />
+              <LuDiscAlbum className="w-5 h-5 mt-1 mx-1 inline" />
+              <IoPeopleSharp className="w-5 h-5 mt-1 mx-1 inline" />
+              <PiPlaylistDuotone className="w-5 h-5 mt-1 mx-1 inline" />
+            </div>
+            Show More Results...
+          </NavLink>
         </div>
         </motion.div>
           }

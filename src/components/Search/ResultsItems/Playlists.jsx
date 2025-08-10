@@ -13,7 +13,7 @@ export default function PlaylistItem(props){
   };
 
   return (
-    <NavLink to="/info" state={playlistInfo} className="w-[98%] h-fit ml-3 mr-3 pl-4 py-0.5 text-neutral-800 font-light flex flex-col items-start justify-center text-xs rounded-md relative hover:scale-[1.01] hover:shadow-2xl border-b-2 border-b-slate-600/40  bg-neutral-300 hover:bg-neutral-200">
+    <NavLink to="/info" state={playlist} className="w-[98%] h-fit ml-3 mr-3 pl-4 py-0.5 text-neutral-800 font-light flex flex-col items-start justify-center text-xs rounded-md relative hover:scale-[1.01] hover:shadow-2xl border-b-2 border-b-slate-600/40  bg-neutral-300 hover:bg-neutral-200">
       <p className="text-sm font-semibold">{playlist.name}</p>
       <p>{playlist.owner.display_name}</p>
       <p className="text-sm font-regular">Tracks: <span className="font-bold">{playlist.tracks.total}</span></p>
