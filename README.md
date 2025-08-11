@@ -77,8 +77,8 @@ As shown above, the requirements for the project are to provide a web app that c
   - Profile snippet
   - Playlist snippet
   - Mini player
-- Full player
 - Full search page
+  - Info page to show details of selected search result
 - Full playlist page showing all users playlists
 
 ### Installation
@@ -133,8 +133,20 @@ This step enables the [basicSsl plugin](https://www.npmjs.com/package/@vitejs/pl
   (*Adding the --host flag here allows connections via your local ip address. The exta '--' passes the flag through to the command that the npm script is going to run.*)
 
 ### Future plans
-- After reading Spotify's latest guidelines for developers, beyond the scope of this project there's not a whole lot more that I could do with this. Any calls to the API should only return max. 20 results before directing the user to Spotify's own app (or to the app store for the users platform to download the Spotify app). There are strict rules with styling including any artwork pulled from the API and fonts an even using your own branding has certain rules with how much it can feature/intertwine with Spotify's branding. 
-- I have really enjoyed getting to grips with this project, and managing to overcome any initial issues with the API and the new, stricter authorisation protocols has really given me a boost in confidence when it comes to working with API's. I would've liked to have been able to continue with the project a little more to create a customisable, personal option to listen to Spotify. Hovwever given the limitations mentioned above, as well as others not mentioned. I believe my time will be better spent on other projects. I'm really happy with the outcome though, and glad I've got this in my portfolio going forward!
+- After reading Spotify's latest guidelines for developers, beyond the scope of this project there's not a whole lot more that I could do with this. Any calls to the API should only return max. 20 results before directing the user to Spotify's own app (or to the app store for the users platform to download the Spotify app). There are strict rules with styling including any artwork pulled from the API and fonts anda even using your own branding has certain rules with how much it can feature/intertwine with Spotify's branding. 
+- I have really enjoyed getting to grips with this project, and managing to overcome any initial issues with the API and the new, stricter authorisation protocols has really given me a boost in confidence when it comes to working with API's. I would've liked to have been able to continue with the project a little more to create a customisable, personal option to listen to Spotify. I'm really happy with the outcome though, and glad I've got this in my portfolio going forward, and will probably revisit it every now and then despite the limitations discussed.
+
+### To Do/Known Bugs
+ - [ ] Update styling of all search results, especially on the overview page, so they are all inline with eachother
+ - [ ] Create and add an 'Add to playlist' button for search results
+ - [ ] Add results from albums, artists, and playlists on all pages/sections that should display these results
+ - [ ] Fix layout of individual playlist component on the playlist page
+ - [ ] Finish integrating motion for scroll effects in playlists
+ - [ ] Finish editing styles to provide a mobile friendly smaller view
+    - [ ] playlist
+    - [ ] now playing
+    - [ ] search
+
 
 
 <image alt="NJTD Logo" src="./public/rainbowLogo.png" width="200px" height="200px" />
