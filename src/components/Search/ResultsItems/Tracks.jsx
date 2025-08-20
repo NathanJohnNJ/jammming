@@ -10,15 +10,6 @@ export default function TrackItem(props){
     release_date: track.album.release_date,
     image: track.album.images[0]
   };
-  const trackInfo = {
-    name: track.name,
-    artists: track.artists,
-    album: track.album,
-    spotifyLink: track.external_urls.spotify,
-    popularity: track.popularity,
-    release_date: track.release_date,
-    image: track.album.images[0]
-  };
 
   return (
     <div className="flex flex-row space-between w-full h-fit rounded-md self-center justify-self-center relative">

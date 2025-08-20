@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { getArtistAlbums } from '../../../lib/info';
 
 export default function ArtistItem(props){
   const { artist } = props;
-
+  const artistAlbums = getArtistAlbums();
+  const albumsNum = artistAlbums.length;
+ 
   return (
-    <div className="flex flex-row space-between w-[98%] rounded-md self-center justify-self-center relative hover:scale-[1.01] hover:shadow-2xl border-b-2 border-b-slate-600/40  bg-neutral-300 hover:bg-neutral-200" style={{height: artist.images[artist.images.length-1].height}}>
+    <div className="flex flex-row space-between w-[98%] rounded-3xl self-center justify-self-center relative hover:scale-[1.01] hover:shadow-2xl border-b-2 border-b-slate-600/40  bg-neutral-300 hover:bg-neutral-200" style={{height: artist.images[artist.images.length-1].height}}>
       <NavLink to="/info" state={artist} className="flex w-full justify-self-center rounded-md">
         <div className="w-full h-fit ml-3 mr-3 pl-4 py-0.5  text-neutral-800 font-light flex flex-col items-start justify-center text-xs rounded-md">
           <div className="flex flex-col items-centre justify-evenly w-[80%]">

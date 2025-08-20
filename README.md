@@ -137,7 +137,7 @@ This step enables the [basicSsl plugin](https://www.npmjs.com/package/@vitejs/pl
 - I have really enjoyed getting to grips with this project, and managing to overcome any initial issues with the API and the new, stricter authorisation protocols has really given me a boost in confidence when it comes to working with API's. I would've liked to have been able to continue with the project a little more to create a customisable, personal option to listen to Spotify. I'm really happy with the outcome though, and glad I've got this in my portfolio going forward, and will probably revisit it every now and then despite the limitations discussed.
 
 ### To Do/Known Bugs
- - [ ] Update styling of all search results, especially on the overview page, so they are all inline with eachother
+ - [x] Update styling of all search results, especially on the overview page, so they are all inline with eachother
  - [ ] Create and add an 'Add to playlist' button for search results
  - [ ] Add results from albums, artists, and playlists on all pages/sections that should display these results
  - [ ] Fix layout of individual playlist component on the playlist page

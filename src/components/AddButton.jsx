@@ -19,7 +19,6 @@ export default function AddButton(props){
       playlistArray.push(type);
       setPlaylists(playlistArray.join(','));
     }
-    
   }
 
   useEffect(() => {

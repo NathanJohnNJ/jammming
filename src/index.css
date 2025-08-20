@@ -9,13 +9,18 @@
   --current-shadow: drop-shadow(0 2px 4px #1ED760) drop-shadow(0 -2px 2px #1DB954) drop-shadow(2px 0 4px #1ED760) drop-shadow(-2px 0 2px #1DB954);
 }
 
+html{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
+
 
 .headers{
   text-shadow: var(--my-shadow);

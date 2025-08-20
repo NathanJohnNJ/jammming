@@ -9,7 +9,7 @@ export default function AlbumItem(props){
     spotifyLink: album.external_urls.spotify,
     release_date: album.release_date,
     image: album.images[album.images.length-1]
-  };
+  }; 
 
   const formatDate = useDateFormatter;
 

@@ -2,6 +2,7 @@ import { getPlaylist, getPlaylists, populatePlaylist, renamePlaylist, updatePlay
 import { useEffect, useState } from "react";
 import RemoveTracks from '../RemoveTracks';
 import NewPlaylist from '../NewPlaylist';
+import PlayButton from '../../PlayButton';
 
 export default function CompactPlaylist() {
   const [ playlist, setPlaylist ] = useState(null);
@@ -11,6 +12,8 @@ export default function CompactPlaylist() {
   const [ image, setImage ] = useState('');
   const show = localStorage.getItem("selection");
 
+
+  
   useEffect(() => {
     async function getData(){
       const playlists = await getPlaylists();
@@ -18,15 +21,18 @@ export default function CompactPlaylist() {
         const thisPlaylist = await getPlaylist(playlists.items[0].id);
         setName(thisPlaylist.name);
         setId(thisPlaylist.id);
-        setDescription(thisPlaylist.description)
-        setImage(thisPlaylist.images[0].url)
+        setDescription(thisPlaylist.description);
+        setImage(thisPlaylist.images[0].url);
+        localStorage.setItem("currentPlaylistUri", thisPlaylist.uri);
+        localStorage.setItem("playlistId", playlists.items[0].id);
         populatePlaylist(thisPlaylist);
       } else {
         const thisPlaylist = await getPlaylist(playlist.id);
         setName(thisPlaylist.name);
         setId(thisPlaylist.id);
-        setDescription(thisPlaylist.description)
-        setImage(thisPlaylist.images[0].url)
+        setDescription(thisPlaylist.description);
+        setImage(thisPlaylist.images[0].url);
+        localStorage.setItem("currentPlaylistUri", thisPlaylist.uri);
         populatePlaylist(thisPlaylist, setTrackId);
       }
     }
@@ -60,11 +66,14 @@ export default function CompactPlaylist() {
     <div className="flex flex-col items-center self-center justify-center playlistBG h-[90%] w-[98%] rounded-xl  ">
       <div className="h-[98.5%] w-[98.5%] bg-white rounded-lg flex flex-col">
         <div className="flex justify-center w-full relative">
-        {
-        image &&
-        <img src={image} alt="Playlist artwork" className="w-[33%] h-auto rounded-lg flex self-center justify-self-center mt-2" />
-        }
-        <NewPlaylist setPlaylist={setPlaylist} />
+          <div className="absolute left-10 top-10">
+          <PlayButton />
+          </div>
+          {
+          image &&
+          <img src={image} alt="Playlist artwork" className="w-[33%] h-auto rounded-lg flex self-center justify-self-center mt-2" />
+          }
+          <NewPlaylist setPlaylist={setPlaylist} />
         </div>
         <form id="playlistName" className="relative rounded-2xl w-full h-[12.5%] flex flex-row items-center justify-between group p-0.5 -mt-0.5 transition-all duration-100" onSubmit={submitName}>
           <input type="text" className="flex self-start text-center text-zinc-800 text-shadow-lg text-[2vw] font-extrabold group w-full h-full rounded-2xl opacity-55 group-active:opacity-90 group-focus-within:opacity-90" name="playlistName" value={name} onChange={e => setName(e.target.value)} placeholder="Name..." />
@@ -77,8 +86,8 @@ export default function CompactPlaylist() {
           <RemoveTracks playlistId={id} show={show} />
         </div>
         <div id="playlistContainer" className="overflow-hidden">
-        <ul id="playlistItems" className="text-black text-sm font-light overflow-y-scroll h-[98%] w-full">
-        </ul>
+          <ul id="playlistItems" className="text-black text-sm font-light overflow-y-scroll h-[98%] w-full">
+          </ul>
         </div>
       </div>
     </div>
